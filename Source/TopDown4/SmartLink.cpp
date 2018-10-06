@@ -136,7 +136,7 @@ void ASmartLink::NotifySmartLinkReached(UNavLinkCustomComponent* LinkComp, UObje
 		pawn = ControllerOwner->GetPawn();
 	}
 
-	GEngine->AddOnScreenDebugMessage(0, 5.f, FColor::Red, TEXT("SmartLink reached"));
+	GEngine->AddOnScreenDebugMessage(0, 20.f, FColor::Red, FString::Printf(TEXT("SmartLink reached: x: %f, y: %f, z: %f"), DestPoint.X, DestPoint.Y, DestPoint.Z));
 	ReceiveSmartLinkReached(pawn, DestPoint);
 	ReceiveSmartLinkReachedWithReturn(pawn, DestPoint);
 	OnSmartLinkReached.Broadcast(pawn, DestPoint);
